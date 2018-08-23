@@ -26,11 +26,13 @@ def main(mode=1):
                 print(colors.YELLOW+'expose {} at position {}'.format(max_expose,known[max_expose])+colors.NORMAL,end='')
                 if mode==1:
                     input()
+                else:
+                    print()
         else:
             print('peer {} at position {}'.format(result,i))
         print(exposed)
         print(max_expose)
     print(operation)
 if __name__=='__main__':
-    main()
+    main(input('mode? '))
     #main(0)
