@@ -1,8 +1,8 @@
 import card_there,card_random
 import colors
 
-def main(mode=1):
-    if mode==1:
+def main(mode='1'):
+    if mode=='1':
         peer=card_there.peer
     else:
         peer=card_random.peer
@@ -24,7 +24,7 @@ def main(mode=1):
                 max_expose+=1
                 exposed[known[max_expose]]=max_expose
                 print(colors.YELLOW+'expose {} at position {}'.format(max_expose,known[max_expose])+colors.NORMAL,end='')
-                if mode==1:
+                if mode=='1':
                     input()
                 else:
                     print()
