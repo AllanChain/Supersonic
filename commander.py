@@ -1,7 +1,11 @@
-import card_there
+import card_there,card_random
 import colors
 
-def main(peer):
+def main(mode=1):
+    if mode==1:
+        peer=card_there.peer
+    else:
+        peer=card_random.peer
     operation=0
     #谁在几号
     known={}
@@ -20,11 +24,13 @@ def main(peer):
                 max_expose+=1
                 exposed[known[max_expose]]=max_expose
                 print(colors.YELLOW+'expose {} at position {}'.format(max_expose,known[max_expose])+colors.NORMAL,end='')
-                input()
+                if mode==1:
+                    input()
         else:
             print('peer {} at position {}'.format(result,i))
         print(exposed)
         print(max_expose)
     print(operation)
 if __name__=='__main__':
-    main(card_there.peer)
+    main()
+    #main(0)
