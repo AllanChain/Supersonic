@@ -1,7 +1,7 @@
-from card_there import peer
+import card_there
 import colors
 
-def main():
+def main(peer):
     operation=0
     #谁在几号
     known={}
@@ -27,4 +27,4 @@ def main():
         print(max_expose)
     print(operation)
 if __name__=='__main__':
-    main()
+    main(card_there.peer)
