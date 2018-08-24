@@ -1,5 +1,4 @@
-from card_random import peer
-import colors
+from card_random import peer,conservative,rerand
 
 def main():
     operation=0
@@ -18,5 +17,14 @@ def main():
                 operation+=1
                 max_expose+=1
                 exposed[known[max_expose]]=max_expose
+    return operation
 if __name__=='__main__':
-    main()
+    total=0
+    for i in range(100):
+        operation=main()
+        c_operation=conservative()
+        delta=c_operation-operation
+        total+=delta
+        print('conservative {},radical {},delta {}'.format(c_operation,operation,delta))
+        rerand()
+    print('average {}'.format(total/(i+1)))
